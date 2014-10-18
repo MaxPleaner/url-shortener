@@ -4,7 +4,8 @@ window.App = {
   Views: {},
   Routers: {},
   initialize: function () {
-    new App.Routers.AppRouter();
+    new App
+    .Routers.AppRouter();
     Backbone.history.start();
   }
 }

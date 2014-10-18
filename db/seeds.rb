@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+dict_path = File.expand_path("../dict.txt", __FILE__)
+f = File.open(dict_path)
+f.each_line do |f|
+  Word.create(name: f.chomp)
+  puts "added #{f.chomp} to dictionary"
+end
+f.close

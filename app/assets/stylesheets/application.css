@@ -13,3 +13,23 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  text-align: center;
+  background: url(http://www.designbolts.com/wp-content/uploads/2013/02/Subtle-Grunge-Grey-Seamless-Pattern-For-Website-Background.jpg);
+  margin-top: 50px;
+  font-family: 'Oxygen', sans-serif;
+}
+
+.backbone-holder {
+  text-align: left;
+  background: rgba(200, 120, 30, .3);
+  display: inline-block;
+  padding: 50px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.intro {
+  margin-bottom: 20px;
+}
