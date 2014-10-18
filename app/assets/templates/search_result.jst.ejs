@@ -1,5 +1,9 @@
-<li>
-  <a href="http://maxp-redirector.heroku.com/alias/<%= message %>">
-    maxp-redirector.heroku.com/alias/<%= message %>
-  </a> 
-</li>
+<% if (message) { %>
+  <li>
+    <a href="http://maxp-redirector.heroku.com/alias/<%= message %>">
+      maxp-redirector.heroku.com/alias/<%= message %>
+    </a> 
+  </li>
+<% } else { %>
+  <span class="alert">None have been created so far</span>
+<% } %>
