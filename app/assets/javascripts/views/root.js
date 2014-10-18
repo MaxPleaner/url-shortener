@@ -15,12 +15,21 @@ App.Views.Root = Backbone.CompositeView.extend({
     this.url.url = "/api/urls/search"
     this.url.save({}, {
       success: function () {
-        this.removeSubviews(".search-results")
+        this.removeSubviews(".search-results");
+        this.$(".search-results").empty()
+        this.hasMatch = false;
         for (var key in this.url.attributes) {
-          var searchResult = new App.Views.SearchResult({
-            model: this.url.attributes[key].alias
-          })
-          this.addSubview(".search-results", searchResult)
+          alias = this.url.attributes[key].alias
+          if (alias) {
+            this.hasMatch = true;
+            var searchResult = new App.Views.SearchResult({
+              model: this.url.attributes[key].alias
+            })
+            this.addSubview(".search-results", searchResult)
+          };
+        };
+        if (!this.hasMatch) {
+          this.$(".search-results").text("No matches");
         }
       }.bind(this)
     })

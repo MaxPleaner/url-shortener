@@ -8,9 +8,7 @@ App.Views.SearchResult = Backbone.View.extend({
     var renderedContent = this.template({
       message: this.model
     });
-    if (this.model) {
-      this.$el.html(renderedContent);
-    }
+    this.$el.html(renderedContent);
     return this;
   }
 });
