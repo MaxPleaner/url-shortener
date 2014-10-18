@@ -4,7 +4,26 @@ App.Views.Root = Backbone.CompositeView.extend({
   template: JST["root"],
 
   events: {
-    "submit #url-form": "submit"
+    "submit #url-form": "submit",
+    "submit #url-list": "showMatches"
+  },
+
+  showMatches: function (event) {
+    event.preventDefault();
+    params = $(event.currentTarget).serializeJSON();
+    this.url = new App.Models.Url(params);
+    this.url.url = "/api/urls/search"
+    this.url.save({}, {
+      success: function () {
+        this.removeSubviews(".search-results")
+        for (var key in this.url.attributes) {
+          var searchResult = new App.Views.SearchResult({
+            model: this.url.attributes[key].alias
+          })
+          this.addSubview(".search-results", searchResult)
+        }
+      }.bind(this)
+    })
   },
 
   submit: function (event) {
@@ -30,7 +49,6 @@ App.Views.Root = Backbone.CompositeView.extend({
       }.bind(this)
     })
   },
-
 
   render: function () {
     var view = this;

@@ -1,5 +1,10 @@
   class Api::UrlsController < ApplicationController
 
+  def search
+    url = url_params[:urlInput]
+    render :json => Url.where(url: url)
+  end
+
   def show
     url = Url.find(params[:id])
     render :json => url
