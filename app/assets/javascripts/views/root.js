@@ -16,7 +16,7 @@ App.Views.Root = Backbone.CompositeView.extend({
     this.url.save({}, {
       success: function () {
         this.removeSubviews(".search-results");
-        this.$(".search-results").empty()
+        this.$(".search-results").empty();
         this.hasMatch = false;
         for (var key in this.url.attributes) {
           alias = this.url.attributes[key].alias

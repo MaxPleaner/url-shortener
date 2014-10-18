@@ -1,4 +1,18 @@
+# == Schema Information
+#
+# Table name: urls
+#
+#  id         :integer          not null, primary key
+#  url        :text
+#  alias      :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 class Url < ActiveRecord::Base
+  validates :url, :presence => true
+  validates :alias, :presence => true
+  validates :url, uniqueness: {scope: :alias}
 
   def self.valid_url?(url)
     url = URI.parse(url) rescue false
