@@ -1,0 +1,4 @@
+-- ruby 1.9.3
+
+-- branches:
+   1) generic backbone & rails app
