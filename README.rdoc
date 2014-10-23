@@ -1,3 +1,7 @@
+Update: I have made a Chrome extension for this site. 
+
+Visit here: https://github.com/MaxPleaner/url-shortener-chrome-extension
+
 -- this is a URL shortener program made with backbone and rails
 -- the ruby version used here is 1.9.3
 
