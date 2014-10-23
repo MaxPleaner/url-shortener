@@ -1,6 +1,6 @@
 <a href="http://maxp-redirector.heroku.com">Redirector Homepage</a> <br>
 
 This url is set up to redirect you to <a href="<%= url.get("url") %>">
-  <%= url.get("url") %> 
+  <%= url.escape("url") %> 
 </a> <br>
 <a class="proceed-button" href="<%= url.get("url") %>">Proceed</a>
