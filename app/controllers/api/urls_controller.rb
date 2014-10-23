@@ -1,4 +1,5 @@
 class Api::UrlsController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: [:create]
 
   def search
     url = url_params[:urlInput]
