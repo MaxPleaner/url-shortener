@@ -1,4 +1,4 @@
-  class Api::UrlsController < ApplicationController
+class Api::UrlsController < ApplicationController
 
   def search
     url = url_params[:urlInput]
