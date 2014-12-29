@@ -1,27 +1,7 @@
-Update: I have made a Chrome extension for this site. 
+I have made a Chrome extension for this site. 
 
 Visit here: https://github.com/MaxPleaner/url-shortener-chrome-extension
 
 -- this is a URL shortener program made with backbone and rails
 -- the ruby version used here is 1.9.3
-
--- process:
-   1) generic backbone & rails app
-      -- i have wanted to put together a skeleton for a backbone and rails app
-         for a while now, and that is the foundation for this project. I pushed
-         it to another repo, http://github.com/maxpleaner/backbone-skeleton
-   2) Imported a dictionary from txt file in order to seed word-generation
-      mechanism. I wanted a more semantically accessible URL generation scheme,
-      and it has been a trend among URL shortening services to use sets of words
-      as the urls' unique identifiers. I first tried a 20,000 word dictionary
-      from the UNIX system, but that was taking forever to seed, so I switched
-      over to a list of 2000 something nouns, which was much more manageable. 
-   3) Created Rails process for making a shortened URL from a valid URL input.
-      Implemented some validation for URLs, but it still needs some more at
-      the time of writing. Made a front-end interface for this process using 
-      Backbone. 
-   4) Implemented actual redirecting scheme in Rails, eventually
-      mirroring it in Backbone with a verification page (to avoid malicious
-      redirection). 
-   5) Hosted it on Heroku, wrote this README 
 
